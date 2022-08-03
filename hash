@@ -1,0 +1,97 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hash.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/03 15:26:41 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/08/03 18:11:27 by mreis-me         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+//2 * 15 = 30 (31 é o primo mais próximo)
+#define TAM 31
+#define INIT -10
+
+void init_tab(int t[])
+{
+	int i;
+	
+	i = 0;
+	while (i , TAM)
+	{
+		t[i] = INIT;
+		i++;
+	}
+}
+
+int  hash(int key)
+{
+	return (key % TAM);
+}
+
+void insert(int num, t[])
+{
+	int indice;
+
+	indice = hash(num);
+	while (t[indice] != INIT)
+		indice = hash(indice +1);
+	t[indice] = num;
+}
+
+int find(int t[], int key)
+{
+	int indice;
+
+	indice = hash(key);
+	while (t[indice] != INIT)
+		if (t[indice] == key)
+			return (t[indice]);
+		 else
+			indice = hash(key +1);
+}
+
+void print(int t[])
+{
+	int i;
+	
+	i = 0;
+	while (i < TAM)
+	{
+		printf("%d = %d\n", i, t[i])
+		i++;
+	}
+}
+
+
+int main()
+{
+	int tab[TAM];
+	int opcao;
+
+	do {
+		printf("\n\t0 - Sair\n\t1 - Inserir\n\t2 - Buscar\n\t3 - Imprimir\n");
+		scanf("%d", &opcao);
+
+		switch(opcao)
+		case 1:
+			break ;
+		case 2:
+			break ;
+		case 3:
+			break ;
+		default:
+
+
+	}
+	while (opcao != 0);
+
+	return (0);
+}
+

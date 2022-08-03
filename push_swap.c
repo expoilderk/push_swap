@@ -1,7 +1,8 @@
 #include <stdio.h>  
 #include <stdlib.h>
 #include "push_swap.h"
- 
+#define INIT 0
+
 void bead_sort(int *arr, int len)
 {
 	int index_i;
@@ -22,10 +23,10 @@ void bead_sort(int *arr, int len)
 	beads = calloc(1, max * len);
  
 	/* mark the beads */
-	index_i = 0;
+	index_i = INIT;
 	while (index_i < len)
 	{
-		index_j = 0;
+		index_j = INIT;
 		while (index_j < arr[index_i])
 		{
 			BEAD(index_i, index_j) = 1; //Trocar para BEAD original
@@ -34,10 +35,10 @@ void bead_sort(int *arr, int len)
 		index_i++;
 	}
 
-	index_j = 0;
+	index_j = INIT;
 	while (index_j < max)
 	{
-		sum = index_i = 0;
+		sum = index_i = INIT;
 		while (index_i < len) /* count how many beads are on each post */
 		{
 			sum += BEAD(index_i, index_j);
@@ -54,13 +55,13 @@ void bead_sort(int *arr, int len)
 		index_j++;
 	}
 
-	index_i = 0;
+	index_i = INIT;
 	while (index_i < len)
 	{
-		index_j = 0;
+		index_j = INIT;
 		while (index_j < max && BEAD(index_i, index_j))
 			index_j++;
-		arr[index_i] = index_j;		
+		arr[index_i] = index_j;
 		index_i++;
 	}
 
