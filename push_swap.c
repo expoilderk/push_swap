@@ -6,18 +6,5 @@ void    init_stack(t_stack *stack)
     stack->index = 0;
     stack->pos = 0;
     stack->prev = NULL;
-    stack->index = NULL;
-}
-
-void push_swap()
-{
-    t_stack *stack_a;
-
-    init_stack(stack_a);
-
-    while (stack_a)
-    {
-        
-    }
-
+    stack->next = NULL;
 }

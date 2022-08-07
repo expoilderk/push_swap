@@ -1,0 +1,10 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/expoilderk/Documentos/42Rio/push_swap'
+cc -Wall -Werror -Wextra   -c -o gravity_sort.o gravity_sort.c
+cc -Wall -Werror -Wextra   -c -o init_stack.o init_stack.c
+cc -Wall -Werror -Wextra   -c -o main.o main.c
+cc -Wall -Werror -Wextra   -c -o push_swap.o push_swap.c
+make -C libft
+cc -Wall -Werror -Wextra gravity_sort.o init_stack.o main.o push_swap.o libft/libft.a -o push_swap
+make: Leaving directory '/home/expoilderk/Documentos/42Rio/push_swap'
+ 

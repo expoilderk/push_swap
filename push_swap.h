@@ -3,6 +3,7 @@
 
 #include <stdio.h> 
 #include <stdlib.h>
+#include "libft/includes/libft.h"
 
 # define BEAD(index_i, index_j) beads[index_i * max + index_j]
 # define INIT 0
@@ -16,8 +17,8 @@ typedef struct s_stack
     struct s_stack	*next;
 }	t_stack;
 
-// Stack
-t_stack *init_stack(t_stack *stack)
+void	add_stack_back(t_stack **stack, t_stack *new);
+t_stack	*stack_last(t_stack *stack);
 
 // Algoritmo
 void gravity_sort(int *arr, int len);
