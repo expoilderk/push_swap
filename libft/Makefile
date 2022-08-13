@@ -2,7 +2,7 @@ NAME = libft.a
 
 INCLUDES = -I includes
 
-SUB_DIRS = is lst mem put str to gnl printf
+SUB_DIRS = is lst num mem put str to gnl printf
 
 DIR_SRCS = $(foreach dir, $(SUB_DIRS), $(addprefix srcs/, $(dir)))
 DIR_OBJS = $(foreach dir, $(SUB_DIRS), $(addprefix objs/, $(dir)))

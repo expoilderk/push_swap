@@ -1,5 +1,5 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'gravity_sort.o', needed by 'push_swap'.  Stop.
+make: *** No rule to make target 'error.o', needed by 'push_swap'.  Stop.
 
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
@@ -8,7 +8,7 @@ make: *** No rule to make target 'gravity_sort.o', needed by 'push_swap'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Aug  8 18:55:39 2022
+# Make data base, printed on Fri Aug 12 11:09:20 2022
 
 # Variables
 
@@ -65,7 +65,7 @@ LIBFT = libft
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.NRHSQ1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.Y1GPQ1
 # default
 .LOADED := 
 # environment
@@ -73,7 +73,7 @@ LESS_TERMCAP_md = [01;32m
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
-GNOME_TERMINAL_SERVICE = :1.119
+GNOME_TERMINAL_SERVICE = :1.90
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -105,13 +105,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 9834
+VSCODE_PID = 2596
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/manjaro:@/tmp/.ICE-unix/1017,unix/manjaro:/tmp/.ICE-unix/1017
+SESSION_MANAGER = local/manjaro:@/tmp/.ICE-unix/1141,unix/manjaro:/tmp/.ICE-unix/1141
 # automatic
 *F = $(notdir $*)
 # environment
@@ -123,7 +123,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 P9K_TTY = old
 # environment
-VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"99f206782a767a6d08ad4d4418aea476.pt-br","_translationsConfigFile":"/home/expoilderk/.config/Code/clp/99f206782a767a6d08ad4d4418aea476.pt-br/tcf.json","_cacheRoot":"/home/expoilderk/.config/Code/clp/99f206782a767a6d08ad4d4418aea476.pt-br","_resolvedLanguagePackCoreLocation":"/home/expoilderk/.config/Code/clp/99f206782a767a6d08ad4d4418aea476.pt-br/da76f93349a72022ca4670c1b84860304616aaa2","_corruptedFile":"/home/expoilderk/.config/Code/clp/99f206782a767a6d08ad4d4418aea476.pt-br/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"89ebf7d0bb12d1282a52b02d65044dbc.pt-br","_translationsConfigFile":"/home/expoilderk/.config/Code/clp/89ebf7d0bb12d1282a52b02d65044dbc.pt-br/tcf.json","_cacheRoot":"/home/expoilderk/.config/Code/clp/89ebf7d0bb12d1282a52b02d65044dbc.pt-br","_resolvedLanguagePackCoreLocation":"/home/expoilderk/.config/Code/clp/89ebf7d0bb12d1282a52b02d65044dbc.pt-br/da76f93349a72022ca4670c1b84860304616aaa2","_corruptedFile":"/home/expoilderk/.config/Code/clp/89ebf7d0bb12d1282a52b02d65044dbc.pt-br/corrupted.info","_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # makefile
@@ -137,7 +137,7 @@ XMODIFIERS = @im=ibus
 # environment
 SHLVL = 2
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/faf488fb_7599_4db8_86eb_66d6910fa970
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/2713b515_928b_4176_8ea2_ec4a2eae99ae
 # environment
 MAKELEVEL := 0
 # default
@@ -189,7 +189,7 @@ LOGNAME = expoilderk
 # makefile
 .DEFAULT_GOAL := push_swap
 # environment
-SYSTEMD_EXEC_PID = 1273
+SYSTEMD_EXEC_PID = 1405
 # makefile (from 'Makefile', line 11)
 RM = rm -f
 # environment
@@ -221,6 +221,7 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /home/expoilderk
 # environment
+ 
 QT_IM_MODULE = ibus
 # environment
 ELECTRON_RUN_AS_NODE = 1
@@ -267,9 +268,9 @@ LC_IDENTIFICATION = pt_BR.UTF-8
 
 # Directories
 
-# . (device 2049, inode 1316814): 13 files, no impossibilities.
+# . (device 2049, inode 1057650): 15 files, no impossibilities.
 
-# 13 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -280,12 +281,11 @@ LC_IDENTIFICATION = pt_BR.UTF-8
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-08 11:23:47.128749314
+#  Last modified 2022-08-12 10:52:40.265846873
 #  File has been updated.
 #  Successfully updated.
 
 clean:
- 
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -293,6 +293,12 @@ clean:
 #  recipe to execute (from 'Makefile', line 23):
 	make clean -C $(LIBFT)
 	$(RM) $(OBJ)
+
+# Not a target:
+error.o:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -335,7 +341,7 @@ run:
 #  recipe to execute (from 'Makefile', line 20):
 	./$(NAME)
 
-push_swap: gravity_sort.o main.o push_swap.o stack.o
+push_swap: error.o gravity_sort.o linked_list.o main.o nb_abs.o push_swap.o stack_example.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
@@ -345,12 +351,31 @@ push_swap: gravity_sort.o main.o push_swap.o stack.o
 
 # Not a target:
 gravity_sort.o:
-#  Implicit rule search has been done.
-#  File does not exist.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+stack_example.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+linked_list.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+ 
 #  File has not been updated.
 
 # Not a target:
 main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+nb_abs.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -360,26 +385,20 @@ main.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-stack.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/37=0%
+# Load=17/1024=2%, Rehash=0, Collisions=0/43=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 28 / storage = 236 B / avg = 8 B
-# current buf: size = 8162 B / used = 236 B / count = 28 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 33 / storage = 309 B / avg = 9 B
+# current buf: size = 8162 B / used = 309 B / count = 33 / avg = 9 B
 
-# strcache performance: lookups = 48 / hit rate = 41%
+# strcache performance: lookups = 53 / hit rate = 37%
 # hash-table stats:
-# Load=28/8192=0%, Rehash=0, Collisions=0/48=0%
-# Finished Make data base on Mon Aug  8 18:55:39 2022
+# Load=33/8192=0%, Rehash=0, Collisions=0/53=0%
+# Finished Make data base on Fri Aug 12 11:09:20 2022
 
  

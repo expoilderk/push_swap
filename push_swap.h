@@ -13,14 +13,38 @@ typedef struct s_stack
 	int				value;
 	int				index;
 	int				pos;
-	struct s_stack	*prev;
+//	struct s_stack	*prev;
     struct s_stack	*next;
 }	t_stack;
 
-void	add_stack_back(t_stack **stack, t_stack *new);
-t_stack	*stack_last(t_stack *stack);
-
-// Algoritmo
+// Algoritm
 void gravity_sort(int *arr, int len);
+
+
+// Stack
+t_stack *new_element(int nb);
+void	add_tail(t_stack **stack, t_stack *new_element);
+t_stack	*get_last(t_stack *stack);
+int		stack_lenght(t_stack *stack);
+//void    stack_index();
+
+
+// Check Arguments
+int is_ordened(t_stack *stack_a);
+
+
+// Handler Arguments
+void    handler_args(int argc, char *argv[]);
+//void	populate_stack();
+
+// Algorithm Selection - Push Swap
+void    push_swap(t_stack *stack_a, t_stack *stack_b, int stack_lenght);
+
+
+// Error Handler
+void	msg_error(char *msg, int exit_code, int fd);
+void	exit_error(t_stack **stack, char *msg, int fd);
+void	free_stack(t_stack **stack);
+
 
 #endif

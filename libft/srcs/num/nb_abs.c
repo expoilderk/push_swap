@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   nb_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/12 11:34:51 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/12 20:54:14 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/08/12 11:08:09 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/08/12 11:11:24 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int main(int argc, char *argv[])
+int nb_abs(int nb)
 {
-    if (argc < 2)
-        return (0);
-    handler_args(argc, argv);
-    return (0);
+    if (nb < 0)
+        return (nb * -1);
+    return (nb);
 }
