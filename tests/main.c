@@ -10,10 +10,9 @@ int main()
 	t_stack stack_a;
 
 	i = 0;
-	while(x[i])
+	while(i < 5)
 	{
-		
-		stack_a = add_stack_back(stack_a, );
+		stack_a = 
 	}
     
 	printf("Original Array:\n");

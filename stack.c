@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:33:54 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/12 20:44:56 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:55:41 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_stack *new_element(int nb)
 	return (new);
 }
 
-void	add_tail(t_stack **stack, t_stack *new_element)
+void	add_tail(t_stack **stack, t_stack *new_element) //Talvez não precise usar
 {
 	t_stack	*tail;
 
@@ -43,13 +43,24 @@ void	add_tail(t_stack **stack, t_stack *new_element)
 	tail->next = new_element;
 }
 
-t_stack	*get_last(t_stack *stack)
+void	add_front(t_stack **stack, t_stack *new_element)
 {
+	if (!stack || !new)
+		return ;
+	new->next = *stack;
+	*stack = new;
+}
+
+t_stack	*get_penult(t_stack *stack) //verificar se funciona para pegar o penultimo elemento
+{
+	t_stack *penult;
+
 	if (!stack)
 		return (NULL);
-	while (stack->next)
-		stack = stack->next;
-	return (stack);
+	penult = stack;
+	while (penult->next->next)
+		penult = penult->next->next;
+	return (penult);
 }
 
 int	stack_lenght(t_stack *stack)
@@ -65,9 +76,33 @@ int	stack_lenght(t_stack *stack)
 	return (size);
 }
 
-/*
-void    stack_index()
-{
 
+void    stack_index(t_stack *stack, int stack_size)
+{
+	t_stack	*temp;
+	t_stack	*max;
+	int		value;
+
+	temp = stack;
+	max = NULL;
+	value = INT_MIN;
+	while (--stack_size > 0)
+	{
+		while (temp)
+		{
+			if(temp->value == INT_MIN && temp->index == 0)
+				temp->index = 1;
+			if(temp->value > value && temp->index == 0)
+			{
+				value = temp->value;
+				max = temp;
+				temp = stack;
+			}
+			else
+				temp = temp->next;
+		}
+		if (max != NULL)
+			max->index = stack_size;
+	}
 }
-*/
+
