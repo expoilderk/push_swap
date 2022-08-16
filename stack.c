@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:33:54 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/16 11:35:31 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/16 15:04:39 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,7 @@ t_stack *new_element(int nb)
     new->next = NULL;
 	return (new);
 }
-/*
-void	add_tail(t_stack **stack, t_stack *new_element) //Talvez não precise usar
-{
-	t_stack	*tail;
 
-	if (!stack || !new_element)
-		msg_error("", 1, 2);
-	if (*stack == NULL)
-	{
-		*stack = new_element;
-		return ;
-	}
-	tail = get_last(*stack);
-	new_element->next = tail->next;
-	tail->next = new_element;
-}
-*/
 void	add_front(t_stack **stack, t_stack *new_element)
 {
 	if (!stack || !new_element)
@@ -63,12 +47,12 @@ t_stack	*get_penult(t_stack *stack) //verificar se funciona para pegar o penulti
 	return (penult);
 }
 
-int	stack_lenght(t_stack *stack)
+int	stack_size(t_stack *stack)
 {
 	int	size;
 
 	size = 0;
-	while (stack)
+	while (stack->next != NULL)
 	{
 		stack = stack->next;
 		size++;

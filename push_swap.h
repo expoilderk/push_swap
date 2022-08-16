@@ -27,7 +27,7 @@ t_stack *new_element(int nb);
 void	add_front(t_stack **stack, t_stack *new_element);
 void	add_tail(t_stack **stack, t_stack *new_element);
 t_stack	*get_penult(t_stack *stack);
-int		stack_lenght(t_stack *stack);
+int		stack_size(t_stack *stack);
 void	stack_index(t_stack *stack, int stack_size);
 
 // Check Arguments

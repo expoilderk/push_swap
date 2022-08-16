@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:56:34 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/12 21:33:18 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/16 15:17:05 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,23 +37,31 @@ void    populate_stack(char *argv[])
 void    handler_args(int argc, char *argv[])
 {
     int index;
-    int stack_size;
+	int value;
+//    int size_stack;
     t_stack *stack_a;
     t_stack *stack_b;
 
-    index = argc -1;
+    index = argc-1;
     stack_b = NULL;
-    int value = ft_atoi(argv[1]);
-    stack_a = new_element();
     while (index > 0)
-    {
-
-        
+	{
+		if(stack_a == NULL)
+		{
+			value = ft_atoi(argv[index]);
+			stack_a = new_element(value);
+		}
+		else
+		{
+			value = ft_atoi(argv[index]);
+			add_front(&stack_a, new_element(value));
+		}
+		ft_printf("value -> %d\n", stack_a->value);
+		index--;
     }
-    
-    
 
-    stack_size = stack_lenght(stack_a); // Pega o tamanho da stack
-    push_swap(stack_a, stack_b, stack_size); // Passa stack montada e verificada para push_swap
-    //free nas duas stacks
+//  size_stack = stack_size(stack_a); // Pega o tamanho da stack
+//	stack_index(stack_a, size_stack);
+//   push_swap(stack_a, stack_b, stack_size); // Passa stack montada e verificada para push_swap
+//free nas duas stacks
 }
