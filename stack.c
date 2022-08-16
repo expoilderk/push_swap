@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:33:54 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/15 16:55:41 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/16 11:35:31 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,21 @@ t_stack *new_element(int nb)
 
 	new = (t_stack *)malloc(sizeof(t_stack));
 	if (!new)
-		msg_error("", EXIT_FAILUIRE, 2);
+		msg_error("", 1, 2);
 	new->value = nb;
-    stack->index = 0;
-    stack->pos = 0;
-//    stack->prev = NULL;
-    stack->next = NULL;
+    new->index = 0;
+    new->pos = 0;
+//  new->prev = NULL;
+    new->next = NULL;
 	return (new);
 }
-
+/*
 void	add_tail(t_stack **stack, t_stack *new_element) //Talvez não precise usar
 {
 	t_stack	*tail;
 
 	if (!stack || !new_element)
-		msg_error("", EXIT_FAILUIRE, 2);
+		msg_error("", 1, 2);
 	if (*stack == NULL)
 	{
 		*stack = new_element;
@@ -42,13 +42,13 @@ void	add_tail(t_stack **stack, t_stack *new_element) //Talvez não precise usar
 	new_element->next = tail->next;
 	tail->next = new_element;
 }
-
+*/
 void	add_front(t_stack **stack, t_stack *new_element)
 {
-	if (!stack || !new)
+	if (!stack || !new_element)
 		return ;
-	new->next = *stack;
-	*stack = new;
+	new_element->next = *stack;
+	*stack = new_element;
 }
 
 t_stack	*get_penult(t_stack *stack) //verificar se funciona para pegar o penultimo elemento
@@ -83,11 +83,11 @@ void    stack_index(t_stack *stack, int stack_size)
 	t_stack	*max;
 	int		value;
 
-	temp = stack;
-	max = NULL;
-	value = INT_MIN;
 	while (--stack_size > 0)
 	{
+		temp = stack;
+		max = NULL;
+		value = INT_MIN;
 		while (temp)
 		{
 			if(temp->value == INT_MIN && temp->index == 0)
