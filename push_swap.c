@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:37:08 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/17 11:49:20 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/17 14:53:55 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void    push_swap(t_stack *stack_a, t_stack *stack_b)
 	(void)stack_b;
 
 	stack_size = get_stack_lenght(stack_a);
-    if (stack_size == 2)
+    if (stack_size > 2)
     {
 		print_stack(stack_a, "A", 'f');
 	//	print_stack(stack_b, "B", 'f');
-        sa(stack_a);
+        rra(&stack_a);
 		print_stack(stack_a, "A", 'f');
 	//	print_stack(stack_b, "B", 'f');
 	}
