@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_args.c                                       :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/12 11:52:03 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/17 09:18:21 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/08/17 11:28:14 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/08/17 12:23:45 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int is_ordened(t_stack *stack_a)
+void	swap(t_stack *stack)
 {
-    while(stack_a->next != NULL)
-    {
-        if (stack_a->value > stack_a->next->value)
-            return (0);
-        stack_a = stack_a->next;
-    }
-    return (1);
-}
-/*
-int check_input(char *argv[])
-{
+	t_stack *temp;
 
-    return (1)
-}*/
+	if (stack == NULL && stack->next == NULL)
+		return ;
+	
+	temp = stack->next;
+	stack->next = temp->next;
+	temp->next = stack;
+//	stack = temp;
+}
+
+void	sa(t_stack *stack_a)
+{
+	swap(stack_a);
+	ft_printf("sa\n");
+}
+
+void	sb(t_stack *stack_b)
+{
+	swap(stack_b);
+	ft_printf("sb\n");
+}

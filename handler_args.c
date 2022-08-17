@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:56:34 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/16 22:24:58 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:49:46 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,40 +26,49 @@ passar a stack e a informação do seu tamanho para "push_swap"
 #include "push_swap.h"
 
 /*
-void    populate_stack(char *argv[])
+t_stack	*populate_stack(int argc, char *argv[])
 {
+	int			index;
+	long int	value;
+	t_stack		*stack;
 
-    if (argv[i] < INT_MIN || argv[i] > INT_MAX)
-        exit_error(stack_a, "Error", 2);
+	lógica que está dentro de handler_args
 }
 */
 
 void    handler_args(int argc, char *argv[])
 {
     int index;
-	int value;
-    int size_stack;
+	long int value;
     t_stack *stack_a;
     t_stack *stack_b;
 
-    index = argc-1;
+	/* Verificar se o input está correto (se são números) - pode ser feito na main talvez */
+
+    index = 1;
     stack_b = NULL;
-    while (index > 0)
+    while (index < argc)
 	{
-		if(stack_a == NULL)
-		{
-			value = ft_atoi(argv[index]);
+		value = ft_atoi(argv[index]); // Modificar atoi para retornar long int
+		if (value < INT_MIN || value > INT_MAX)
+			exit_error(&stack_a, "Error", 2);
+
+		if(index == 1)
 			stack_a = new_element(value);
-		}
 		else
-		{
-			value = ft_atoi(argv[index]);
-			add_front(&stack_a, new_element(value));
-		}
-		index--;
+			add_back(&stack_a, new_element(value));
+		index++;
     }
-	size_stack = stack_size(stack_a); // Pega o tamanho da stack
-	stack_index(stack_a, size_stack);
-	push_swap(stack_a, stack_b, size_stack); // Passa stack montada e verificada para push_swap
-//free nas duas stacks
+
+	/* Checar os elementos na stack (duplicatas) */
+
+	if (is_ordened(stack_a) == 1)
+		exit_error(&stack_a, "Ordened!", 1);
+
+	get_index(stack_a);
+	get_position(stack_a);
+
+//	print_stack(stack_a, "A", 'f');
+	push_swap(stack_a, stack_b);
+	//free nas duas stacks
 }

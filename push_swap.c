@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:37:08 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/16 22:53:43 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/17 11:49:20 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,32 +18,18 @@
 
 #include "push_swap.h"
 
-void    push_swap(t_stack *stack_a, t_stack *stack_b, int stack_size)
-{   
+void    push_swap(t_stack *stack_a, t_stack *stack_b)
+{
+	int stack_size;
+	(void)stack_b;
 
-    
-    //ft_printf("%d", stack_size);
-
-    if (stack_size > 1)
+	stack_size = get_stack_lenght(stack_a);
+    if (stack_size == 2)
     {
-        pb(&stack_a, &stack_b);
-        //ft_putendl_fd("sa", 1); // Caso não esteja ordenado apenas imprimir sa
-    }
-
-    
-    while(stack_a)
-	{
-		ft_printf("value -> %d", stack_a->value);
-		ft_printf(" - index -> %d\n", stack_a->index);
-		stack_a = stack_a->next;
+		print_stack(stack_a, "A", 'f');
+	//	print_stack(stack_b, "B", 'f');
+        sa(stack_a);
+		print_stack(stack_a, "A", 'f');
+	//	print_stack(stack_b, "B", 'f');
 	}
-    ft_printf("stack a\n\n");
-    
-    while(stack_b)
-	{
-		ft_printf("value -> %d", stack_b->value);
-		ft_printf(" - index -> %d\n", stack_b->index);
-		stack_b = stack_b->next;
-	}
-    ft_printf("stack b");
 }
