@@ -22,6 +22,12 @@ typedef struct s_stack
 void gravity_sort(int *arr, int len);
 
 
+// Commands
+void    push(t_stack **src, t_stack **dest);
+void    pa(t_stack **stack_b, t_stack **stack_a);
+void    pb(t_stack **stack_a, t_stack **stack_b);
+
+
 // Stack
 t_stack *new_element(int nb);
 void	add_front(t_stack **stack, t_stack *new_element);

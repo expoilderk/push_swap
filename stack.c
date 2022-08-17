@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:33:54 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/16 15:04:39 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/16 22:25:32 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	stack_size(t_stack *stack)
 	int	size;
 
 	size = 0;
-	while (stack->next != NULL)
+	while (stack)
 	{
 		stack = stack->next;
 		size++;

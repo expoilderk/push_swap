@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:56:34 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/16 15:17:05 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/16 22:24:58 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void    handler_args(int argc, char *argv[])
 {
     int index;
 	int value;
-//    int size_stack;
+    int size_stack;
     t_stack *stack_a;
     t_stack *stack_b;
 
@@ -56,12 +56,10 @@ void    handler_args(int argc, char *argv[])
 			value = ft_atoi(argv[index]);
 			add_front(&stack_a, new_element(value));
 		}
-		ft_printf("value -> %d\n", stack_a->value);
 		index--;
     }
-
-//  size_stack = stack_size(stack_a); // Pega o tamanho da stack
-//	stack_index(stack_a, size_stack);
-//   push_swap(stack_a, stack_b, stack_size); // Passa stack montada e verificada para push_swap
+	size_stack = stack_size(stack_a); // Pega o tamanho da stack
+	stack_index(stack_a, size_stack);
+	push_swap(stack_a, stack_b, size_stack); // Passa stack montada e verificada para push_swap
 //free nas duas stacks
 }

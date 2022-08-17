@@ -1,5 +1,5 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'error.o', needed by 'push_swap'.  Stop.
+make: *** No rule to make target 'check_args.o', needed by 'push_swap'.  Stop.
 
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
@@ -8,7 +8,7 @@ make: *** No rule to make target 'error.o', needed by 'push_swap'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug 12 11:09:20 2022
+# Make data base, printed on Tue Aug 16 22:06:35 2022
 
 # Variables
 
@@ -53,7 +53,7 @@ MAIL = /var/spool/mail/expoilderk
 # environment
 XDG_DATA_DIRS = /home/expoilderk/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop
 # environment
-OLDPWD = /home/expoilderk/Documentos/42Rio
+OLDPWD = /home/expoilderk
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -65,7 +65,7 @@ LIBFT = libft
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.Y1GPQ1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.LYTWQ1
 # default
 .LOADED := 
 # environment
@@ -73,7 +73,7 @@ LESS_TERMCAP_md = [01;32m
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
-GNOME_TERMINAL_SERVICE = :1.90
+GNOME_TERMINAL_SERVICE = :1.259
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -105,13 +105,13 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 2596
+VSCODE_PID = 4862
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/manjaro:@/tmp/.ICE-unix/1141,unix/manjaro:/tmp/.ICE-unix/1141
+SESSION_MANAGER = local/manjaro:@/tmp/.ICE-unix/1012,unix/manjaro:/tmp/.ICE-unix/1012
 # automatic
 *F = $(notdir $*)
 # environment
@@ -137,7 +137,7 @@ XMODIFIERS = @im=ibus
 # environment
 SHLVL = 2
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/2713b515_928b_4176_8ea2_ec4a2eae99ae
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/345462cc_ca3e_495a_a307_bd13a4aff189
 # environment
 MAKELEVEL := 0
 # default
@@ -150,6 +150,7 @@ LESS_TERMCAP_se = [0m
 MAKEFILES := 
 # environment
 LC_MONETARY = pt_BR.UTF-8
+ 
 # environment
 MOTD_SHOWN = pam
 # automatic
@@ -159,6 +160,7 @@ HEADER = push_swap.h
 # environment
 LC_TIME = pt_BR.UTF-8
 # environment
+ 
 LESS_TERMCAP_mb = [01;32m
 # environment
 USERNAME = expoilderk
@@ -189,7 +191,7 @@ LOGNAME = expoilderk
 # makefile
 .DEFAULT_GOAL := push_swap
 # environment
-SYSTEMD_EXEC_PID = 1405
+SYSTEMD_EXEC_PID = 1271
 # makefile (from 'Makefile', line 11)
 RM = rm -f
 # environment
@@ -221,7 +223,6 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /home/expoilderk
 # environment
- 
 QT_IM_MODULE = ibus
 # environment
 ELECTRON_RUN_AS_NODE = 1
@@ -268,7 +269,7 @@ LC_IDENTIFICATION = pt_BR.UTF-8
 
 # Directories
 
-# . (device 2049, inode 1057650): 15 files, no impossibilities.
+# . (device 2049, inode 1053168): 15 files, no impossibilities.
 
 # 15 files, no impossibilities in 1 directories.
 
@@ -279,11 +280,23 @@ LC_IDENTIFICATION = pt_BR.UTF-8
 # Files
 
 # Not a target:
+handler_error.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-12 10:52:40.265846873
+#  Last modified 2022-08-16 22:02:01.257119792
 #  File has been updated.
 #  Successfully updated.
+
+# Not a target:
+check_args.o:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
 
 clean:
 #  Phony target (prerequisite of .PHONY).
@@ -293,12 +306,6 @@ clean:
 #  recipe to execute (from 'Makefile', line 23):
 	make clean -C $(LIBFT)
 	$(RM) $(OBJ)
-
-# Not a target:
-error.o:
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has not been updated.
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -341,32 +348,13 @@ run:
 #  recipe to execute (from 'Makefile', line 20):
 	./$(NAME)
 
-push_swap: error.o gravity_sort.o linked_list.o main.o nb_abs.o push_swap.o stack_example.o
+push_swap: check_args.o handler_args.o handler_error.o main.o push_swap.o stack.o
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 14):
 	make -C $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT)/libft.a -o $(NAME)
-
-# Not a target:
-gravity_sort.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-stack_example.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-linked_list.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
- 
-#  File has not been updated.
+	$(CC) -g $(CFLAGS) $(OBJ) $(LIBFT)/libft.a -o $(NAME)
 
 # Not a target:
 main.o:
@@ -375,7 +363,7 @@ main.o:
 #  File has not been updated.
 
 # Not a target:
-nb_abs.o:
+handler_args.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -385,20 +373,26 @@ nb_abs.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+stack.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=17/1024=2%, Rehash=0, Collisions=0/43=0%
+# Load=16/1024=2%, Rehash=0, Collisions=0/41=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 33 / storage = 309 B / avg = 9 B
-# current buf: size = 8162 B / used = 309 B / count = 33 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 32 / storage = 295 B / avg = 9 B
+# current buf: size = 8162 B / used = 295 B / count = 32 / avg = 9 B
 
-# strcache performance: lookups = 53 / hit rate = 37%
+# strcache performance: lookups = 52 / hit rate = 38%
 # hash-table stats:
-# Load=33/8192=0%, Rehash=0, Collisions=0/53=0%
-# Finished Make data base on Fri Aug 12 11:09:20 2022
+# Load=32/8192=0%, Rehash=0, Collisions=0/52=0%
+# Finished Make data base on Tue Aug 16 22:06:35 2022
 
  
