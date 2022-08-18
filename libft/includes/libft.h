@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 20:10:30 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/12 11:11:15 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/17 22:33:28 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 int		ft_atoi(const char *str);
+
+long int	ft_atoi_l(const char *str);
 
 void	*ft_calloc(size_t count, size_t size);
 

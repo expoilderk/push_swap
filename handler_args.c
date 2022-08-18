@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:56:34 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/17 11:49:46 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/18 00:00:47 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,11 @@ void    handler_args(int argc, char *argv[])
     t_stack *stack_a;
     t_stack *stack_b;
 
-	/* Verificar se o input está correto (se são números) - pode ser feito na main talvez */
-
     index = 1;
     stack_b = NULL;
     while (index < argc)
 	{
-		value = ft_atoi(argv[index]); // Modificar atoi para retornar long int
+		value = ft_atoi_l(argv[index]);
 		if (value < INT_MIN || value > INT_MAX)
 			exit_error(&stack_a, "Error", 2);
 

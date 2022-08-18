@@ -1,0 +1,18 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/expoilderk/Documentos/42Rio/push_swap'
+cc -Wall -Werror -Wextra   -c -o check_args.o check_args.c
+cc -Wall -Werror -Wextra   -c -o handler_args.o handler_args.c
+cc -Wall -Werror -Wextra   -c -o handler_error.o handler_error.c
+cc -Wall -Werror -Wextra   -c -o main.o main.c
+cc -Wall -Werror -Wextra   -c -o push.o push.c
+cc -Wall -Werror -Wextra   -c -o push_swap.o push_swap.c
+cc -Wall -Werror -Wextra   -c -o rev_rotate.o rev_rotate.c
+cc -Wall -Werror -Wextra   -c -o rotate.o rotate.c
+cc -Wall -Werror -Wextra   -c -o sort_three.o sort_three.c
+cc -Wall -Werror -Wextra   -c -o stack.o stack.c
+cc -Wall -Werror -Wextra   -c -o swap.o swap.c
+cc -Wall -Werror -Wextra   -c -o utils.o utils.c
+make -C libft
+cc -g -Wall -Werror -Wextra check_args.o handler_args.o handler_error.o main.o push.o push_swap.o rev_rotate.o rotate.o sort_three.o stack.o swap.o utils.o libft/libft.a -o push_swap
+make: Leaving directory '/home/expoilderk/Documentos/42Rio/push_swap'
+ 

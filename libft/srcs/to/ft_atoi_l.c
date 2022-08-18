@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi_l.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/12 11:34:51 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/17 22:30:13 by mreis-me         ###   ########.fr       */
+/*   Created: 2022/05/12 11:30:08 by mreis-me          #+#    #+#             */
+/*   Updated: 2022/08/18 00:00:56 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int main(int argc, char *argv[])
+long int	ft_atoi_l(const char *str)
 {
-    if (argc < 2)
-        return (0);
+	long int	sum;
+	int	i;
+	int	sign;
 
-    /* Verificar se o input está correto (se são números) */
-    
-    handler_args(argc, argv);
-    return (0);
+	sum = 0;
+	i = 0;
+	sign = 1;
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		sum = (sum * 10) + (str[i] - '0');
+		i++;
+	}
+	return (sign * sum);
 }
