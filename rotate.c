@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 13:02:50 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/17 14:43:43 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/19 08:30:27 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 void	rotate(t_stack **stack)
 {
 	t_stack *head;
-//	t_stack *node;
 	t_stack *last;
 
 	if ((*stack) == NULL && (*stack)->next == NULL)
 		return ;
 	
-//	node = *stack;
 	last = *stack;
 	head = (*stack)->next;
 	while(last->next)

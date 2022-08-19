@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:56:34 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/18 00:00:47 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/19 08:46:44 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,8 @@ void    handler_args(int argc, char *argv[])
 	get_index(stack_a);
 	get_position(stack_a);
 
-//	print_stack(stack_a, "A", 'f');
+	print_stack(stack_a, "A", 'f');
 	push_swap(stack_a, stack_b);
+
 	//free nas duas stacks
 }

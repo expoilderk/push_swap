@@ -15,7 +15,8 @@ typedef struct s_stack
 }	t_stack;
 
 // Algoritm
-//void gravity_sort(int *arr, int len);
+void	sort_little(t_stack *stack);
+void	sort_middle(t_stack *stack_a, t_stack *stack_b, int stack_size);
 
 
 // Commands
