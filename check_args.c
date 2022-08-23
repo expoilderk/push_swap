@@ -6,29 +6,25 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:52:03 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/23 18:31:30 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/23 18:46:29 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int is_ordened(t_stack *stack_a)
+int check_input(int argc, char **argv)
 {
-    while(stack_a->next != NULL)
-    {
-        if (stack_a->value > stack_a->next->value)
-            return (0);
-        stack_a = stack_a->next;
-    }
-    return (1);
+	int i;
+
+	i = 1;
+	while(i < argc)
+	{
+		if(!ft_isdigit(argv[i][0]))
+			return (0);
+		i++;
+	}
+	return (1);
 }
-
-/*
-int check_input(char *argv[])
-{
-
-    return (1)
-}*/
 
 int	is_duplicated(t_stack *stack_a)
 {
@@ -52,5 +48,16 @@ int	is_duplicated(t_stack *stack_a)
 		cmp = stack_a;
 		tmp = tmp->next;
 	}
-	return 0;
+	return (0);
+}
+
+int is_ordened(t_stack *stack_a)
+{
+    while(stack_a->next != NULL)
+    {
+        if (stack_a->value > stack_a->next->value)
+            return (0);
+        stack_a = stack_a->next;
+    }
+    return (1);
 }

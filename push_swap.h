@@ -50,6 +50,7 @@ t_stack		*get_last(t_stack *last);
 
 
 // Check Arguments
+int check_input(int argc, char **argv);
 int is_ordened(t_stack *stack_a);
 int	is_duplicated(t_stack *stack_a);
 

@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:56:34 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/23 18:14:24 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/23 18:35:15 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void    handler_args(int argc, char *argv[])
 		index++;
     }
 
-	/* Checar os elementos na stack (duplicatas) */
 	if (is_duplicated(stack_a) == 1)
 		exit_error(&stack_a, "Duplicated", 2);
 
@@ -66,9 +65,9 @@ void    handler_args(int argc, char *argv[])
 		exit_error(&stack_a, "Ordened!", 1);
 
 	get_index(stack_a);
-	get_position(stack_a);
+	get_position(stack_a); //não usar aqui
 
-	print_stack(stack_a, "A", 'f');
+	print_stack(stack_a, "A", 'f'); //print
 	push_swap(stack_a, stack_b);
 
 	//free nas duas stacks
