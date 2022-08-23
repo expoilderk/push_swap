@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:56:34 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/19 08:46:44 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/23 18:14:24 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ void    handler_args(int argc, char *argv[])
     }
 
 	/* Checar os elementos na stack (duplicatas) */
+	if (is_duplicated(stack_a) == 1)
+		exit_error(&stack_a, "Duplicated", 2);
 
 	if (is_ordened(stack_a) == 1)
 		exit_error(&stack_a, "Ordened!", 1);

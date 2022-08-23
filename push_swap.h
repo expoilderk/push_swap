@@ -16,7 +16,7 @@ typedef struct s_stack
 
 // Algoritm
 void	sort_little(t_stack *stack);
-void	sort_middle(t_stack *stack_a, t_stack *stack_b, int stack_size);
+void	sort_middle(t_stack **stack_a, t_stack **stack_b, int stack_size);
 
 
 // Commands
@@ -51,6 +51,7 @@ t_stack		*get_last(t_stack *last);
 
 // Check Arguments
 int is_ordened(t_stack *stack_a);
+int	is_duplicated(t_stack *stack_a);
 
 
 // Handler Arguments

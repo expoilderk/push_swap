@@ -6,42 +6,35 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 09:16:49 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/19 10:29:43 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/23 17:49:45 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_middle(t_stack *stack_a, t_stack *stack_b, int stack_size)
+void	sort_middle(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 //	int middle = stack_size / 2;
+	t_stack *tmp;
+	int i = 0;
 
-	while(stack_a->next)
+	tmp = *stack_a;
+	while(tmp && i < (stack_size /2))
 	{
-		while(stack_size > 3)
+			//pb(stack_a, stack_b);
+			//stack_size--;
+
+		if(tmp->index <= (stack_size /2))
 		{
-			pb(&stack_a, &stack_b);
-			stack_size--;
-/*
-			if(stack_a->index < middle)
-			{
-				pb(&stack_a, &stack_b);
-				stack_size--;
-			}
-			else
-				ra(&stack_a);*/
+			pb(stack_a, stack_b);
+			i++;
 		}
-		stack_a = stack_a->next;
+		else
+		{
+			ra(stack_a);
+			i++;
+		}
+		tmp = tmp->next;
 	}
 	
-	print_stack(stack_b, "B", 'f');
-	print_stack(stack_a, "A", 'f');
-
-
-//	ft_printf("%d\n", stack_a->index);
-//	ft_printf("%d\n", stack_a->next->index);
-//	ft_printf("%d\n", stack_a->next->next->index);
-//	ft_printf("%d\n", stack_b->index);
-//	ft_printf("%d\n", stack_b->next->index);
-
 }
