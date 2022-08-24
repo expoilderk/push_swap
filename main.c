@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:34:51 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/23 18:50:17 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/24 11:53:39 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 {
     if (argc < 2)
         return (0);
-	if(check_input(argc, argv) == 0) //Aprimorar se necessário
+	if(check_input(argc, argv) == 1) //Aprimorar se necessário
 	{
 		ft_printf("Error\n");
 		return (0);

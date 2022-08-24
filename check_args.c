@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:52:03 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/23 18:46:29 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/24 08:15:18 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,16 @@ int check_input(int argc, char **argv)
 	i = 1;
 	while(i < argc)
 	{
-		if(!ft_isdigit(argv[i][0]))
-			return (0);
+		if(argv[i][0] == '-' || argv[i][0] == '+')
+		{
+			if(!ft_isdigit(argv[i][1]))
+				return (1);
+		}
+		else if(!ft_isdigit(argv[i][0]))
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 int	is_duplicated(t_stack *stack_a)

@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:28:23 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/12 13:03:54 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/24 14:38:04 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	msg_error(char *msg, int exit_code, int fd)
 
 void	exit_error(t_stack **stack, char *msg, int fd)
 {
-	ft_putendl_fd(msg, fd);
+	ft_putstr_fd(msg, fd);
     free_stack(stack);
 	exit(EXIT_FAILURE);
 }

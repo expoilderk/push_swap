@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 15:39:10 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/19 09:15:43 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/24 14:58:25 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 void	sort_little(t_stack *stack)
 {
-	if(stack->index > stack->next->index)
-		if(stack->index > stack->next->next->index)
-			ra(&stack);
-	if(stack->next->index > stack->next->next->index)
-		rra(&stack);
-	if(stack->index > stack->next->index)
-		sa(&stack);
-	
-	print_stack(stack, "A", 'f'); // printa stack ordenada
+	t_stack *tmp;
+
+	tmp = stack;
+	if(tmp->index > tmp->next->index)
+		if(tmp->index > tmp->next->next->index)
+			ra(&tmp);
+	if(tmp->next->index > tmp->next->next->index)
+		rra(&tmp);
+	if(tmp->index > tmp->next->index)
+		sa(&tmp);
 }

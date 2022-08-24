@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:56:34 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/23 18:35:15 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/24 15:16:04 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,6 @@ passar a stack e a informação do seu tamanho para "push_swap"
 */
 
 #include "push_swap.h"
-
-/*
-t_stack	*populate_stack(int argc, char *argv[])
-{
-	int			index;
-	long int	value;
-	t_stack		*stack;
-
-	lógica que está dentro de handler_args
-}
-*/
 
 void    handler_args(int argc, char *argv[])
 {
@@ -59,16 +48,18 @@ void    handler_args(int argc, char *argv[])
     }
 
 	if (is_duplicated(stack_a) == 1)
-		exit_error(&stack_a, "Duplicated", 2);
+		exit_error(&stack_a, "", 2);
 
-	if (is_ordened(stack_a) == 1)
-		exit_error(&stack_a, "Ordened!", 1);
+	if (is_ordened(stack_a) == 0)
+	{
+		get_index(stack_a);
+		push_swap(stack_a, stack_b);
+	}
+	else
+		exit_error(&stack_a, "", 1);
 
-	get_index(stack_a);
-	get_position(stack_a); //não usar aqui
-
-	print_stack(stack_a, "A", 'f'); //print
-	push_swap(stack_a, stack_b);
+//	get_position(stack_a); //não usar aqui
+	
 
 	//free nas duas stacks
 }

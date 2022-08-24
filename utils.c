@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 10:00:33 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/17 11:25:59 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/24 13:07:53 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,20 @@ void	get_position(t_stack *stack)
 		temp = temp->next;
 		index++;
 	}
+}
+
+void	print_s(t_stack **stack, char *name)
+{
+	t_stack *tmp;
+
+	tmp = *stack;
+	while(tmp)
+	{
+		ft_printf("v -> %d\n", tmp->value);
+		tmp = tmp->next;
+	}
+	ft_printf("----------\n");
+	ft_printf("    %s   \n\n", name);
 }
 
 void	print_stack(t_stack *stack, char *name, char type)

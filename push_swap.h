@@ -16,7 +16,7 @@ typedef struct s_stack
 
 // Algoritm
 void	sort_little(t_stack *stack);
-void	sort_middle(t_stack **stack_a, t_stack **stack_b, int stack_size);
+void	sort_middle(t_stack **stack_a, t_stack **stack_b);
 
 
 // Commands
@@ -72,8 +72,8 @@ void	free_stack(t_stack **stack);
 
 //Utils
 void	print_stack(t_stack *stack, char *name, char type);
+void	print_s(t_stack **stack, char *name);
 void	get_index(t_stack *stack);
 void	get_position(t_stack *stack);
-
 
 #endif
