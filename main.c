@@ -16,11 +16,11 @@ int main(int argc, char *argv[])
 {
     if (argc < 2)
         return (0);
-	if(check_input(argc, argv) == 1) //Aprimorar se necessário
-	{
-		ft_printf("Error\n");
-		return (0);
-	}
+    if(check_input(argc, argv) == 1)
+    {
+	    ft_printf("Error\n");
+	    return (0);
+    }
     handler_args(argc, argv);
     return (0);
 }

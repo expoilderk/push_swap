@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:37:08 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/24 13:35:22 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/24 22:50:50 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,11 @@ void    push_swap(t_stack *stack_a, t_stack *stack_b)
     if (stack_size == 2)
 		sa(&tmp_a);
 	else if(stack_size == 3)
-		sort_little(tmp_a);
-	else if(stack_size > 3 && stack_size < 6)
-		sort_middle(&tmp_a, &tmp_b);
+		sort_three(&tmp_a);
+	else if(stack_size == 4)
+		sort_four(&tmp_a, &tmp_b);
+	else if(stack_size == 5)
+		sort_five(&tmp_a, &tmp_b);
 	else if(stack_size > 5)
-		ft_printf("sorted more 5 numbers\n");
+		ft_printf("sort_big\n");
 }

@@ -1,49 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_middle.c                                      :+:      :+:    :+:   */
+/*   sort_four.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 09:16:49 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/24 15:49:41 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/24 23:00:34 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_middle(t_stack **stack_a, t_stack **stack_b)
+void	sort_four(t_stack **stack_a, t_stack **stack_b)
 {
-//	int push;
-	int s_size;
+	int push;
 	t_stack *tmp_a;
 	t_stack *tmp_b;
 
 	tmp_a = *stack_a;
 	tmp_b = *stack_b;
-//	push = 0;
-	s_size = 5;
-	while( s_size > 3 )
+	push = 0;
+	while(push != 1) // O bloco pode virar uma função aux
 	{
-		if(tmp_a->index < 3)
+		if(tmp_a->index == 1)
 		{
 			pb(&tmp_a, &tmp_b);
-//			push++;
+			push = 1;
 		}
 		else
 			ra(&tmp_a);
-		s_size = get_stack_lenght(tmp_a);
 	}
-	
-	while(tmp_b)
+
+	if (is_ordened(tmp_a) == 1)
+		pa(&tmp_b, &tmp_a);
+	else
 	{
-		if (is_ordened(tmp_a) == 1)
-			pa(&tmp_b, &tmp_a);
-		else
-			sort_little(tmp_a);
-		if (is_ordened(tmp_a) == 0)
-			pa(&tmp_b, &tmp_a);
+		sort_three(&tmp_a);
+		pa(&tmp_b, &tmp_a);
 	}
-	if (tmp_a->index > tmp_a->next->index)
-		sa(&tmp_a);
+    if (is_ordened(tmp_a) == 0)
+	    if (tmp_a->index > tmp_a->next->index)
+		    sa(&tmp_a);
 }

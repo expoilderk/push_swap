@@ -15,8 +15,9 @@ typedef struct s_stack
 }	t_stack;
 
 // Algoritm
-void	sort_little(t_stack *stack);
-void	sort_middle(t_stack **stack_a, t_stack **stack_b);
+void	sort_three(t_stack **stack);
+void	sort_four(t_stack **stack_a, t_stack **stack_b);
+void	sort_five(t_stack **stack_a, t_stack **stack_b);
 
 
 // Commands
