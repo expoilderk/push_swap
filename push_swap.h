@@ -18,7 +18,7 @@ typedef struct s_stack
 void	sort_three(t_stack **stack);
 void	sort_four(t_stack **stack_a, t_stack **stack_b);
 void	sort_five(t_stack **stack_a, t_stack **stack_b);
-
+void    radix(t_stack **stack_a, t_stack **stack_b);
 
 // Commands
 void    push(t_stack **src, t_stack **dest);
@@ -46,7 +46,7 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 t_stack *new_element(int nb);
 void	add_front(t_stack **stack, t_stack *new_element);
 void	add_back(t_stack **stack, t_stack *new_element);
-int		get_stack_lenght(t_stack *stack);
+int		get_stack_size(t_stack *stack);
 t_stack		*get_last(t_stack *last);
 
 

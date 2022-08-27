@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 10:00:33 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/24 13:07:53 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/27 14:27:02 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void   get_index(t_stack *stack)
 	int		value;
 	int		stack_size;
 
-	stack_size = get_stack_lenght(stack) +1;
+	stack_size = get_stack_size(stack) +1;
 	while (--stack_size > 0)
 	{
 		temp = stack;

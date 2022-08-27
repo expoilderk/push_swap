@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'check_args.o', needed by 'push_swap'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Aug 24 21:20:43 2022
+# Make data base, printed on Fri Aug 26 21:43:35 2022
 
 # Variables
 
@@ -20,6 +22,8 @@ LC_ALL = C
 NO_AT_BRIDGE = 1
 # makefile (from 'Makefile', line 5)
 SRC = $(wildcard *.c)
+# environment
+VIRTUAL_ENV = /home/expoilderk/Documentos/42Rio/push_swap_visualizer/.env
 # environment
 GNOME_KEYRING_CONTROL = /run/user/1000/keyring
 # environment
@@ -57,7 +61,7 @@ OLDPWD = /home/expoilderk/Documentos/42Rio
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/expoilderk/.config/Code/CachedData/da76f93349a72022ca4670c1b84860304616aaa2
+VSCODE_CODE_CACHE_PATH = /home/expoilderk/.config/Code/CachedData/e4503b30fc78200f846c62cf8091b76ff5547662
 # makefile (from 'Makefile', line 3)
 LIBFT = libft
 # environment
@@ -71,7 +75,9 @@ LESS_TERMCAP_md = [01;32m
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
-GNOME_TERMINAL_SERVICE = :1.131
+VIRTUAL_ENV_PROMPT = (.env) 
+# environment
+GNOME_TERMINAL_SERVICE = :1.500
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -103,7 +109,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 4415
+VSCODE_PID = 73059
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -121,7 +127,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 P9K_TTY = old
 # environment
-VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"8e7a008e83c664b9876a8f72ff0490ae.pt-br","_translationsConfigFile":"/home/expoilderk/.config/Code/clp/8e7a008e83c664b9876a8f72ff0490ae.pt-br/tcf.json","_cacheRoot":"/home/expoilderk/.config/Code/clp/8e7a008e83c664b9876a8f72ff0490ae.pt-br","_resolvedLanguagePackCoreLocation":"/home/expoilderk/.config/Code/clp/8e7a008e83c664b9876a8f72ff0490ae.pt-br/da76f93349a72022ca4670c1b84860304616aaa2","_corruptedFile":"/home/expoilderk/.config/Code/clp/8e7a008e83c664b9876a8f72ff0490ae.pt-br/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"pt-br","availableLanguages":{"*":"pt-br"},"_languagePackId":"8e7a008e83c664b9876a8f72ff0490ae.pt-br","_translationsConfigFile":"/home/expoilderk/.config/Code/clp/8e7a008e83c664b9876a8f72ff0490ae.pt-br/tcf.json","_cacheRoot":"/home/expoilderk/.config/Code/clp/8e7a008e83c664b9876a8f72ff0490ae.pt-br","_resolvedLanguagePackCoreLocation":"/home/expoilderk/.config/Code/clp/8e7a008e83c664b9876a8f72ff0490ae.pt-br/e4503b30fc78200f846c62cf8091b76ff5547662","_corruptedFile":"/home/expoilderk/.config/Code/clp/8e7a008e83c664b9876a8f72ff0490ae.pt-br/corrupted.info","_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # makefile
@@ -135,13 +141,13 @@ XMODIFIERS = @im=ibus
 # environment
 SHLVL = 2
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/78bb56fb_e5a4_4b78_aaef_b9a36f46dc85
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/4888bf77_d208_458b_b925_2274fe170c6b
 # environment
 MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /home/expoilderk/.local/bin:/usr/local/bin:/usr/bin:/var/lib/snapd/snap/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+PATH = /home/expoilderk/Documentos/42Rio/push_swap_visualizer/.env/bin:/home/expoilderk/.local/bin:/usr/local/bin:/usr/bin:/var/lib/snapd/snap/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 # environment
 LESS_TERMCAP_se = [0m
 # default
@@ -223,7 +229,7 @@ QT_IM_MODULE = ibus
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-4da83e53-1.70.0-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-4da83e53-1.70.2-main.sock
 # environment
 TERM = xterm-256color
 # default
@@ -257,7 +263,7 @@ PKGFILE_PROMPT_INSTALL_MISSING = 1
 # environment
 LC_IDENTIFICATION = pt_BR.UTF-8
 # variable set hash-table stats:
-# Load=123/1024=12%, Rehash=0, Collisions=26/157=17%
+# Load=125/1024=12%, Rehash=0, Collisions=26/159=16%
 
 # Pattern-specific Variable Values
 
@@ -265,9 +271,9 @@ LC_IDENTIFICATION = pt_BR.UTF-8
 
 # Directories
 
-# . (device 2049, inode 1053168): 37 files, no impossibilities.
+# . (device 2049, inode 1969745): 25 files, no impossibilities.
 
-# 37 files, no impossibilities in 1 directories.
+# 25 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -276,53 +282,42 @@ LC_IDENTIFICATION = pt_BR.UTF-8
 # Files
 
 # Not a target:
-sort_middle.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 21:17:32.817362813
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-sort_little.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 21:17:32.770692666
-#  File has been updated.
-#  Successfully updated.
+sort_four.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 handler_error.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 21:15:40.947327065
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Makefile:
+ 
 #  Implicit rule search has been done.
-#  Last modified 2022-08-24 21:12:12.185672414
+#  Last modified 2022-08-26 21:42:54.94674797
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 swap.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 21:17:32.920703852
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 push.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 21:17:32.570677751
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 check_args.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-24 21:15:40.847321483
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 
 clean:
 #  Phony target (prerequisite of .PHONY).
@@ -341,10 +336,9 @@ re: fclean all
 
 # Not a target:
 push_swap.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 21:17:32.617347899
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -357,8 +351,7 @@ all: push_swap
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
-#  File has been updated.
-#  Successfully updated.
+#  File has not been updated.
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
@@ -376,35 +369,43 @@ run:
 #  recipe to execute (from 'Makefile', line 20):
 	./$(NAME)
 
-push_swap: check_args.o handler_args.o handler_error.o main.o push.o push_swap.o rev_rotate.o rotate.o sort_little.o sort_middle.o stack.o swap.o utils.o
+push_swap: check_args.o handler_args.o handler_error.o main.o push.o push_swap.o rev_rotate.o rotate.o sort_five.o sort_four.o sort_three.o stack.o swap.o utils.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-24 21:17:35.464226702
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 14):
 	make -C $(LIBFT)
 	$(CC) -g $(CFLAGS) $(OBJ) $(LIBFT)/libft.a -o $(NAME)
 
 # Not a target:
+sort_five.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 main.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 21:17:32.520674023
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+sort_three.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 handler_args.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 21:15:40.900657793
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 utils.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 21:17:32.974041162
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 .PHONY: all clean fclean re
 #  Implicit rule search has not been done.
@@ -413,39 +414,36 @@ utils.o:
 
 # Not a target:
 rev_rotate.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 21:17:32.670685209
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 rotate.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 21:17:32.720688938
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 stack.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-24 21:17:32.870700123
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=23/1024=2%, Rehash=0, Collisions=0/55=0%
+# Load=24/1024=2%, Rehash=0, Collisions=0/57=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 47 / storage = 451 B / avg = 9 B
-# current buf: size = 8162 B / used = 451 B / count = 47 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 50 / storage = 478 B / avg = 9 B
+# current buf: size = 8162 B / used = 478 B / count = 50 / avg = 9 B
 
-# strcache performance: lookups = 81 / hit rate = 41%
+# strcache performance: lookups = 70 / hit rate = 28%
 # hash-table stats:
-# Load=47/8192=1%, Rehash=0, Collisions=0/81=0%
-# Finished Make data base on Wed Aug 24 21:20:43 2022
+# Load=50/8192=1%, Rehash=0, Collisions=0/70=0%
+# Finished Make data base on Fri Aug 26 21:43:35 2022
 
  

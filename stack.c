@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:33:54 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/17 10:53:46 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/27 14:27:02 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	add_back(t_stack **stack, t_stack *new_element)
 }
 
 
-t_stack		*get_last(t_stack *last)
+t_stack	*get_last(t_stack *last)
 {
 	if (!last)
 		return (NULL);
@@ -61,7 +61,7 @@ t_stack		*get_last(t_stack *last)
 }
 
 
-int	get_stack_lenght(t_stack *stack)
+int	get_stack_size(t_stack *stack)
 {
 	int	size;
 	t_stack *temp;
