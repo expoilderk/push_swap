@@ -10,9 +10,13 @@ typedef struct s_stack
 {
 	int				value;
 	int				index;
-	int				pos;
+	int				pos; //verificar utilidade
     struct s_stack	*next;
 }	t_stack;
+
+// Handler Arguments
+void    populate(int argc, char *argv[]);
+void    push_swap(t_stack *stack_a, t_stack *stack_b);
 
 // Algoritm
 void	sort_three(t_stack **stack);
@@ -40,40 +44,24 @@ void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 
-
-
 // Stack
 t_stack *new_element(int nb);
-void	add_front(t_stack **stack, t_stack *new_element);
 void	add_back(t_stack **stack, t_stack *new_element);
 int		get_stack_size(t_stack *stack);
-t_stack		*get_last(t_stack *last);
-
 
 // Check Arguments
 int check_input(int argc, char **argv);
-int is_ordened(t_stack *stack_a);
+int is_ordened(t_stack *stack);
+int is_rev_ordened(t_stack *stack);
 int	is_duplicated(t_stack *stack_a);
-
-
-// Handler Arguments
-void    handler_args(int argc, char *argv[]);
-//void	populate_stack();
-
-
-// Algorithm Selection - Push Swap
-void    push_swap(t_stack *stack_a, t_stack *stack_b);
-
 
 // Error Handler
 void	msg_error(char *msg, int exit_code, int fd);
 void	exit_error(t_stack **stack, char *msg, int fd);
 void	free_stack(t_stack **stack);
 
-
 //Utils
-void	print_stack(t_stack *stack, char *name, char type);
-void	print_s(t_stack **stack, char *name);
+void	print_stack(t_stack **stack, char *name);
 void	get_index(t_stack *stack);
 void	get_position(t_stack *stack);
 

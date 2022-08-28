@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:34:51 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/24 11:53:39 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/27 21:29:46 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int main(int argc, char *argv[])
 	    ft_printf("Error\n");
 	    return (0);
     }
-    handler_args(argc, argv);
+    populate(argc, argv);
     return (0);
 }

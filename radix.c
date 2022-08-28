@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 22:26:32 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/27 15:11:22 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/27 21:32:30 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,41 +38,45 @@ void    radix(t_stack **stack_a, t_stack **stack_b)
     int j;
     int bits;
     int size;
-    //int size_b;
-    t_stack *tmp;
-    //t_stack *tmp_b;
+    int size_b;
+    t_stack *tmp_a;
+    t_stack *tmp_b;
 
     i = 0;
-    tmp = *stack_a;
-    size = get_stack_size(*stack_a);
+    tmp_a = *stack_a;
     bits = get_bits(*stack_a);
     while (i < bits)
     {
+        // Enviar para stack B
         j = 0;
+        size = get_stack_size(*stack_a);
         while (j < size)
         {
-            tmp = *stack_a;
-            if (((tmp->index >> i) & 1) == 0)
+            tmp_a = *stack_a;
+            if(is_ordened(tmp_a) == 1)
+                break ;
+            if (((tmp_a->index >> i) & 1) == 0)
                 pb(stack_a, stack_b);
             else
                 ra(stack_a);
             j++;
         }
         
-        /*j = 0;
+        // Devolve para stack A
+        j = 0;
         size_b = get_stack_size(*stack_b);
         while (j < size_b)
         {
             tmp_b = *stack_b;
-            if (((tmp_b->index >> i) & 2) == 0)
+            if (((tmp_b->index >> i) & (1 << 1)) == 0)
                 rb(stack_b);
             else
                 pa(stack_b, stack_a);
             j++;
-        }*/
-        
-        while(get_stack_size(*stack_b) != 0)
-            pa(stack_b, stack_a);
+        }            
         i++;
-    }       
+    }
+    // Envia tudo para stack A no final   
+    while(get_stack_size(*stack_b) != 0)
+        pa(stack_b, stack_a);
 }

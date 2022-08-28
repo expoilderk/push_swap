@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 09:16:49 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/24 23:00:34 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/27 21:35:04 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	sort_four(t_stack **stack_a, t_stack **stack_b)
 		else
 			ra(&tmp_a);
 	}
-
 	if (is_ordened(tmp_a) == 1)
 		pa(&tmp_b, &tmp_a);
 	else

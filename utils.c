@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 10:00:33 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/27 14:27:02 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/27 21:23:41 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void   get_index(t_stack *stack)
 	}
 }
 
-void	get_position(t_stack *stack)
+void	get_position(t_stack *stack) //Verificar a utilidade
 {
 	int	index;
 	t_stack *temp;
@@ -58,64 +58,16 @@ void	get_position(t_stack *stack)
 	}
 }
 
-void	print_s(t_stack **stack, char *name)
+void	print_stack(t_stack **stack, char *name)
 {
 	t_stack *tmp;
 
 	tmp = *stack;
 	while(tmp)
 	{
-		ft_printf("v -> %d\n", tmp->value);
+		ft_printf("v -> %di -> %d\n", tmp->value, tmp->index);
 		tmp = tmp->next;
 	}
 	ft_printf("----------\n");
 	ft_printf("    %s   \n\n", name);
-}
-
-void	print_stack(t_stack *stack, char *name, char type)
-{
-	t_stack *temp;
-
-	temp = stack;
-
-	if(type == 'v')
-	{
-		while(temp)
-		{
-			ft_printf("value -> %d\n", temp->value);
-			temp = temp->next;
-		}
-		ft_printf("----------\n");
-		ft_printf("    %s   \n\n", name);
-	}
-	else if(type == 'i')
-	{
-		while(temp)
-		{
-			ft_printf("index -> %d\n", temp->index);
-			temp = temp->next;
-		}
-		ft_printf("----------\n");
-		ft_printf("    %s   \n\n", name);
-	}
-	else if(type == 'p')
-	{
-		while(temp)
-		{
-			ft_printf("position -> %d\n", temp->pos);
-			temp = temp->next;
-		}
-		ft_printf("----------\n");
-		ft_printf("    %s   \n\n", name);
-	}
-	else if(type == 'f')
-	{
-		while(temp)
-		{
-			ft_printf("value -> %d - index -> %d - pos -> %d\n", temp->value, temp->index, temp->pos);
-			temp = temp->next;
-		}
-		ft_printf("----------\n");
-		ft_printf("    %s   \n\n", name);
-	}
 }

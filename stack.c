@@ -6,11 +6,20 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:33:54 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/27 14:27:02 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/27 21:29:53 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static t_stack	*get_last(t_stack *last)
+{
+	if (!last)
+		return (NULL);
+	while (last->next)
+		last = last->next;
+	return (last);
+}
 
 t_stack *new_element(int nb)
 {
@@ -24,14 +33,6 @@ t_stack *new_element(int nb)
     new->pos = 0;
     new->next = NULL;
 	return (new);
-}
-
-void	add_front(t_stack **stack, t_stack *new_element)
-{
-	if (!stack || !new_element)
-		return ;
-	new_element->next = *stack;
-	*stack = new_element;
 }
 
 void	add_back(t_stack **stack, t_stack *new_element)
@@ -49,17 +50,6 @@ void	add_back(t_stack **stack, t_stack *new_element)
 	new_element->next = back->next;
 	back->next = new_element;
 }
-
-
-t_stack	*get_last(t_stack *last)
-{
-	if (!last)
-		return (NULL);
-	while (last->next)
-		last = last->next;
-	return (last);
-}
-
 
 int	get_stack_size(t_stack *stack)
 {

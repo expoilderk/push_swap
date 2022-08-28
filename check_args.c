@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:52:03 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/27 14:39:58 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/08/27 20:36:25 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,24 @@ int	is_duplicated(t_stack *stack_a)
 	return (0);
 }
 
-int is_ordened(t_stack *stack_a)
+int is_ordened(t_stack *stack)
 {
-    while(stack_a->next != NULL)
+    while(stack->next != NULL)
     {
-        if (stack_a->value > stack_a->next->value)
+        if (stack->value > stack->next->value)
             return (0);
-        stack_a = stack_a->next;
+        stack = stack->next;
+    }
+    return (1);
+}
+
+int is_rev_ordened(t_stack *stack)
+{
+    while(stack->next != NULL)
+    {
+        if (stack->value < stack->next->value)
+            return (0);
+        stack = stack->next;
     }
     return (1);
 }
