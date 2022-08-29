@@ -12,7 +12,7 @@ RM = rm -f
 
 $(NAME): $(OBJ)
 	make -C $(LIBFT)
-	$(CC) -g $(CFLAGS) $(OBJ) $(LIBFT)/libft.a -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT)/libft.a -o $(NAME)
 
 all: $(NAME)
 
