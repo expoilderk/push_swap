@@ -84,9 +84,7 @@ void	radix(t_stack **stack_a, t_stack **stack_b)
 	while (bit < max_bits)
 	{
 		step_one(stack_a, stack_b, bit);
-
 		step_two(stack_a, stack_b, bit);
-
 		bit++;
 	}
 	while (get_stack_size(*stack_b) != 0)

@@ -13,8 +13,8 @@
 long int	ft_atoi_l(const char *str)
 {
 	long int	sum;
-	int	i;
-	int	sign;
+	int			i;
+	int			sign;
 
 	sum = 0;
 	i = 0;

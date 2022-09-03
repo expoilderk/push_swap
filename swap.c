@@ -14,10 +14,10 @@
 
 void	swap(t_stack **stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
 	if ((*stack) == NULL && (*stack)->next == NULL)
-		return ;	
+		return ;
 	temp = (*stack)->next;
 	(*stack)->next = temp->next;
 	temp->next = *stack;

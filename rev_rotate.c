@@ -14,22 +14,19 @@
 
 void	rev_rotate(t_stack **stack)
 {
-	t_stack *head;
-	t_stack *penult;
-	t_stack *last;
+	t_stack	*head;
+	t_stack	*penult;
+	t_stack	*last;
 
 	if ((*stack) == NULL && (*stack)->next == NULL)
 		return ;
-	
 	penult = *stack;
 	head = *stack;
 	last = *stack;
-
-	while(penult->next->next)
+	while (penult->next->next)
 		penult = penult->next;
-	while(last->next)
+	while (last->next)
 		last = last->next;
-
 	last->next = head;
 	penult->next = NULL;
 	*stack = last;
@@ -53,4 +50,3 @@ void	rrr(t_stack **stack_a, t_stack **stack_b)
 	rev_rotate(stack_b);
 	ft_printf("rrr\n");
 }
-

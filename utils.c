@@ -12,14 +12,12 @@
 
 #include "push_swap.h"
 
-void   get_index(t_stack *stack)
+void	get_index(t_stack *stack, int stack_size)
 {
 	t_stack	*temp;
 	t_stack	*max;
 	int		value;
-	int		stack_size;
 
-	stack_size = get_stack_size(stack) +1;
 	while (--stack_size > 0)
 	{
 		temp = stack;
@@ -27,9 +25,9 @@ void   get_index(t_stack *stack)
 		value = INT_MIN;
 		while (temp)
 		{
-			if(temp->value == INT_MIN && temp->index == 0)
+			if (temp->value == INT_MIN && temp->index == 0)
 				temp->index = 1;
-			if(temp->value > value && temp->index == 0)
+			if (temp->value > value && temp->index == 0)
 			{
 				value = temp->value;
 				max = temp;
@@ -45,8 +43,8 @@ void   get_index(t_stack *stack)
 
 void	get_position(t_stack *stack) //Verificar a utilidade
 {
-	int	index;
-	t_stack *temp;
+	int		index;
+	t_stack	*temp;
 
 	index = 1;
 	temp = stack;
@@ -60,10 +58,10 @@ void	get_position(t_stack *stack) //Verificar a utilidade
 
 void	print_stack(t_stack **stack, char *name)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	tmp = *stack;
-	while(tmp)
+	while (tmp)
 	{
 		ft_printf("v -> %di -> %d\n", tmp->value, tmp->index);
 		tmp = tmp->next;

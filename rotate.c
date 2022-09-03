@@ -14,15 +14,14 @@
 
 void	rotate(t_stack **stack)
 {
-	t_stack *head;
-	t_stack *last;
+	t_stack	*head;
+	t_stack	*last;
 
 	if ((*stack) == NULL && (*stack)->next == NULL)
 		return ;
-	
 	last = *stack;
 	head = (*stack)->next;
-	while(last->next)
+	while (last->next)
 		last = last->next;
 	(*stack)->next = last->next;
 	last->next = *stack;

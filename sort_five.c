@@ -12,18 +12,14 @@
 
 #include "push_swap.h"
 
-void	sort_five(t_stack **stack_a, t_stack **stack_b)
+static void	push_min_index(t_stack *tmp_a, t_stack *tmp_b)
 {
-	int push;
-	t_stack *tmp_a;
-	t_stack *tmp_b;
+	int	push;
 
-	tmp_a = *stack_a;
-	tmp_b = *stack_b;
 	push = 0;
-	while(push < 2) // O bloco pode virar uma função aux
+	while (push < 2)
 	{
-		if(tmp_a->index < 3)
+		if (tmp_a->index < 3)
 		{
 			pb(&tmp_a, &tmp_b);
 			push++;
@@ -31,6 +27,16 @@ void	sort_five(t_stack **stack_a, t_stack **stack_b)
 		else
 			ra(&tmp_a);
 	}
+}
+
+void	sort_five(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack	*tmp_a;
+	t_stack	*tmp_b;
+
+	tmp_a = *stack_a;
+	tmp_b = *stack_b;
+	push_min_index(tmp_a, tmp_b);
 	if (is_ordened(tmp_a) == 1)
 	{
 		pa(&tmp_b, &tmp_a);

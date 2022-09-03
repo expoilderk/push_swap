@@ -12,19 +12,19 @@
 
 #include "push_swap.h"
 
-int check_input(int argc, char **argv)
+int	check_input(int argc, char **argv)
 {
-	int i;
+	int	i;
 
 	i = 1;
-	while(i < argc)
+	while (i < argc)
 	{
-		if(argv[i][0] == '-' || argv[i][0] == '+')
+		if (argv[i][0] == '-' || argv[i][0] == '+')
 		{
-			if(!ft_isdigit(argv[i][1]))
+			if (!ft_isdigit(argv[i][1]))
 				return (1);
 		}
-		else if(!ft_isdigit(argv[i][0]))
+		else if (!ft_isdigit(argv[i][0]))
 			return (1);
 		i++;
 	}
@@ -33,18 +33,18 @@ int check_input(int argc, char **argv)
 
 int	is_duplicated(t_stack *stack_a)
 {
-	t_stack *tmp;
-	t_stack *cmp;
-	int flag;
+	t_stack	*tmp;
+	t_stack	*cmp;
+	int		flag;
 
 	tmp = stack_a;
 	cmp = stack_a;
-	while(tmp)
+	while (tmp)
 	{
 		flag = 0;
-		while(cmp)
+		while (cmp)
 		{
-			if(tmp->value == cmp->value)
+			if (tmp->value == cmp->value)
 				flag++;
 			cmp = cmp->next;
 		}
@@ -56,24 +56,24 @@ int	is_duplicated(t_stack *stack_a)
 	return (0);
 }
 
-int is_ordened(t_stack *stack)
+int	is_ordened(t_stack *stack)
 {
-    while(stack->next != NULL)
-    {
-        if (stack->value > stack->next->value)
-            return (0);
-        stack = stack->next;
-    }
-    return (1);
+	while (stack->next != NULL)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }
 
-int is_rev_ordened(t_stack *stack)
+int	is_rev_ordened(t_stack *stack)
 {
-    while(stack->next != NULL)
-    {
-        if (stack->value < stack->next->value)
-            return (0);
-        stack = stack->next;
-    }
-    return (1);
+	while (stack->next != NULL)
+	{
+		if (stack->value < stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }

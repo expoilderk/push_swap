@@ -21,19 +21,19 @@ void	msg_error(char *msg, int exit_code, int fd)
 void	exit_error(t_stack **stack, char *msg, int fd)
 {
 	ft_putstr_fd(msg, fd);
-    free_stack(stack);
+	free_stack(stack);
 	exit(EXIT_FAILURE);
 }
 
 void	free_stack(t_stack **stack)
 {
-	t_stack *temp;
+	t_stack	*temp;
 
-    while(*stack)
-    {
-        temp = (*stack)->next;
-        free(*stack);
-        *stack = temp;
-    }
-    *stack = NULL;
+	while (*stack)
+	{
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
+	}
+	*stack = NULL;
 }

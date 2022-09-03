@@ -21,7 +21,7 @@ static t_stack	*get_last(t_stack *last)
 	return (last);
 }
 
-t_stack *new_element(int nb)
+t_stack	*new_element(int nb)
 {
 	t_stack	*new;
 
@@ -29,9 +29,9 @@ t_stack *new_element(int nb)
 	if (!new)
 		msg_error("", 1, 2);
 	new->value = nb;
-    new->index = 0;
-    new->pos = 0;
-    new->next = NULL;
+	new->index = 0;
+	new->pos = 0;
+	new->next = NULL;
 	return (new);
 }
 
@@ -53,8 +53,8 @@ void	add_back(t_stack **stack, t_stack *new_element)
 
 int	get_stack_size(t_stack *stack)
 {
-	int	size;
-	t_stack *temp;
+	int		size;
+	t_stack	*temp;
 
 	size = 0;
 	temp = stack;
