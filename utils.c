@@ -63,7 +63,7 @@ void	print_stack(t_stack **stack, char *name)
 	tmp = *stack;
 	while (tmp)
 	{
-		ft_printf("v -> %di -> %d\n", tmp->value, tmp->index);
+		ft_printf("v -> %d | i -> %d\n", tmp->value, tmp->index);
 		tmp = tmp->next;
 	}
 	ft_printf("----------\n");
