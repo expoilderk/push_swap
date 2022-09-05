@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 22:26:32 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/09/05 13:03:46 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/05 16:42:53 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ static void	step_two(t_stack **stack_a, t_stack **stack_b, int bit)
 			pa(stack_b, stack_a);
 		counter++;
 	}
-
 }
 
 void	radix(t_stack **stack_a, t_stack **stack_b)
