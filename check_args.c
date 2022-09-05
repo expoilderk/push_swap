@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:52:03 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/27 20:36:25 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/05 12:52:41 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	is_ordened(t_stack *stack)
 {
 	while (stack->next != NULL)
 	{
-		if (stack->value > stack->next->value)
+		if ((stack->index - stack->next->index) != -1)
 			return (0);
 		stack = stack->next;
 	}
@@ -71,7 +71,7 @@ int	is_rev_ordened(t_stack *stack)
 {
 	while (stack->next != NULL)
 	{
-		if (stack->value < stack->next->value)
+		if (stack->index - stack->next->index != 1)
 			return (0);
 		stack = stack->next;
 	}

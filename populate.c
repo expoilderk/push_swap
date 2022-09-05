@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:56:34 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/27 21:55:29 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/05 13:03:54 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,13 @@ void	populate(int argc, char *argv[])
 		index++;
 	}
 	if (is_duplicated(stack_a) == 1)
-		exit_error(&stack_a, "", 2);
+		exit_error(&stack_a, "Error", 2);
+	else
+		get_index(stack_a, get_stack_size(stack_a) +1);
 	if (is_ordened(stack_a) == 0)
 		push_swap(stack_a, stack_b);
 	else
 		exit_error(&stack_a, "", 1);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 }
