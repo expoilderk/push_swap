@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 20:10:30 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/17 22:33:28 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/07 13:42:03 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int			ft_isalnum(int c);
 int			ft_isascii(int c);
 int			ft_isprint(int c);
 int			ft_isargs(int c);
+int			ft_issign(char c);
 
 size_t		ft_strlen(const char *str);
 size_t		ft_nbrlen_i(int n);

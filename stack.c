@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:33:54 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/09/06 19:11:08 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/07 13:59:58 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,9 @@ t_stack	*new_element(int nb)
 {
 	t_stack	*new;
 
-	new = (t_stack *)malloc(sizeof(t_stack));
+	new = malloc(sizeof * new);
 	if (!new)
-	{
-		free(new);
-		exit(EXIT_FAILURE);
-	}
+		return (NULL);
 	new->value = nb;
 	new->index = 0;
 	new->pos = 0;
