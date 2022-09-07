@@ -1,14 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix.c                                            :+:      :+:    :+:   */
+/*   radix_mod.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 22:26:32 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/09/07 12:56:09 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/07 12:56:51 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// Função experimental para buscar mais otimização com radix em blocos
 
 #include "push_swap.h"
 
@@ -31,6 +33,30 @@ static int	get_bits(t_stack *stack)
 		max_bits++;
 	return (max_bits);
 }
+
+/*
+static void	step_zero(t_stack **stack_a, t_stack **stack_b)
+{
+	int		stack_size;
+	int		counter;
+	t_stack	*tmp;
+
+	tmp = *stack_a;
+	counter = 0;
+	stack_size = get_stack_size(*stack_a);
+	while (counter < stack_size)
+	{
+		tmp = *stack_a;
+		if(tmp->index <= stack_size / 2)
+			pb(stack_a, stack_b);
+		else
+			ra(stack_a);
+		counter++;
+	}
+	while (get_stack_size(*stack_b) != 0)
+		pa(stack_b, stack_a);
+}
+*/
 
 static void	step_one(t_stack **stack_a, t_stack **stack_b, int bit)
 {
@@ -82,6 +108,7 @@ void	radix(t_stack **stack_a, t_stack **stack_b)
 	int		max_bits;
 
 	bit = 0;
+//	step_zero(stack_a, stack_b);
 	max_bits = get_bits(*stack_a);
 	while (bit < max_bits)
 	{

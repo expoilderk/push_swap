@@ -6,13 +6,13 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:33:54 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/09/05 10:53:32 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/06 19:11:08 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_stack	*get_last(t_stack *last)
+t_stack	*get_last(t_stack *last)
 {
 	if (!last)
 		return (NULL);

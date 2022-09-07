@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 22:27:59 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/16 22:50:35 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/06 21:39:48 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void	rrr(t_stack **stack_a, t_stack **stack_b);
 t_stack	*new_element(int nb);
 void	add_back(t_stack **stack, t_stack *new_element);
 int		get_stack_size(t_stack *stack);
+t_stack	*get_last(t_stack *last);
 
 // Check Arguments
 int		check_input(int argc, char **argv);
