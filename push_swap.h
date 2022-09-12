@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 22:27:59 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/09/06 21:39:48 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/12 15:32:41 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ typedef struct s_stack
 {
 	int				value;
 	int				index;
-	int				pos; //verificar utilidade
 	struct s_stack	*next;
 }	t_stack;
 
 // Handler Arguments
 void	populate(int argc, char *argv[]);
 void	push_swap(t_stack *stack_a, t_stack *stack_b);
+t_stack *pop(int argc, char **argv);
 
 // Algoritm
 void	sort_three(t_stack **stack);
@@ -69,13 +69,13 @@ int		is_rev_ordened(t_stack *stack);
 int		is_duplicated(t_stack *stack_a);
 
 // Error Handler
-void	msg_error(char *msg, int exit_code, int fd);
 void	exit_error(t_stack **stack, char *msg, int fd);
 void	free_stack(t_stack **stack);
+//void	exit_error(t_stack **stack_a, t_stack **stack_b);
+
 
 //Utils
 void	print_stack(t_stack **stack, char *name);
 void	get_index(t_stack *stack, int stack_size);
-void	get_position(t_stack *stack);
 
 #endif

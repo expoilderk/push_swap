@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 10:00:33 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/08/27 21:23:41 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/12 11:29:15 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,6 @@ void	get_index(t_stack *stack, int stack_size)
 		}
 		if (max != NULL)
 			max->index = stack_size;
-	}
-}
-
-void	get_position(t_stack *stack) //Verificar a utilidade
-{
-	int		index;
-	t_stack	*temp;
-
-	index = 1;
-	temp = stack;
-	while (temp)
-	{
-		temp->pos = index;
-		temp = temp->next;
-		index++;
 	}
 }
 
