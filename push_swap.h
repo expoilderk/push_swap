@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 22:27:59 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/09/12 15:32:41 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/13 23:16:33 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ typedef struct s_stack
 }	t_stack;
 
 // Handler Arguments
-void	populate(int argc, char *argv[]);
-void	push_swap(t_stack *stack_a, t_stack *stack_b);
-t_stack *pop(int argc, char **argv);
+void	populate(int argc, char **argv);
+void	push_swap(t_stack **stack_a, t_stack **stack_b);
 
 // Algoritm
 void	sort_three(t_stack **stack);
@@ -71,8 +70,6 @@ int		is_duplicated(t_stack *stack_a);
 // Error Handler
 void	exit_error(t_stack **stack, char *msg, int fd);
 void	free_stack(t_stack **stack);
-//void	exit_error(t_stack **stack_a, t_stack **stack_b);
-
 
 //Utils
 void	print_stack(t_stack **stack, char *name);
