@@ -16,3 +16,4 @@ int	ft_issign(char c)
 		return (1);
 	return (0);
 }
+

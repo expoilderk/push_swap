@@ -6,17 +6,19 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 22:27:59 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/09/13 23:16:33 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/15 00:27:17 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include "libft/includes/libft.h"
+
+# define INT_MIN -2147483648
+# define INT_MAX 2147483647
 
 typedef struct s_stack
 {
@@ -25,9 +27,26 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
+// Check Arguments
+int		is_ordened(t_stack *stack);
+int		is_rev_ordened(t_stack *stack);
+int		is_duplicated(t_stack *stack_a);
+int		check_input(int argc, char **argv);
+
+// Error Handler
+void	free_stack(t_stack **stack);
+void	exit_error(t_stack **stack, char *msg, int fd);
+
 // Handler Arguments
 void	populate(int argc, char **argv);
 void	push_swap(t_stack **stack_a, t_stack **stack_b);
+
+// Stack
+t_stack	*new_element(int nb);
+t_stack	*get_last(t_stack *last);
+int		get_stack_size(t_stack *stack);
+void	get_index(t_stack *stack, int stack_size);
+void	add_back(t_stack **stack, t_stack *new_element);
 
 // Algoritm
 void	sort_three(t_stack **stack);
@@ -54,25 +73,5 @@ void	rev_rotate(t_stack **stack);
 void	rra(t_stack **stack_a);
 void	rrb(t_stack **stack_b);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
-
-// Stack
-t_stack	*new_element(int nb);
-void	add_back(t_stack **stack, t_stack *new_element);
-int		get_stack_size(t_stack *stack);
-t_stack	*get_last(t_stack *last);
-
-// Check Arguments
-int		check_input(int argc, char **argv);
-int		is_ordened(t_stack *stack);
-int		is_rev_ordened(t_stack *stack);
-int		is_duplicated(t_stack *stack_a);
-
-// Error Handler
-void	exit_error(t_stack **stack, char *msg, int fd);
-void	free_stack(t_stack **stack);
-
-//Utils
-void	print_stack(t_stack **stack, char *name);
-void	get_index(t_stack *stack, int stack_size);
 
 #endif

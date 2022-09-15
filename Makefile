@@ -2,7 +2,9 @@ NAME = push_swap
 HEADER = push_swap.h
 LIBFT = libft
 
-SRC = $(wildcard *.c)
+SRC = main.c check.c error.c populate.c push_swap.c \
+	push.c swap.c rotate.c rev_rotate.c stack.c radix.c \
+	sort_three.c sort_four.c sort_five.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -15,9 +17,6 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT)/libft.a -o $(NAME)
 
 all: $(NAME)
-
-run:
-	./$(NAME)
 
 clean:
 	make clean -C $(LIBFT)
