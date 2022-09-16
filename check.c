@@ -6,28 +6,35 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:52:03 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/09/14 23:52:16 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/15 21:22:49 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_input(int argc, char **argv)
+int	check_input(int argc, char **argv, int i, int j)
 {
-	int	i;
-	int j;
-	char *args;
+	long int	value;
+	char		**args;
 
-	i = 1;
-	while (i < argc)
+	if (argc == 2)
+		args = ft_split(argv[1], ' ');
+	else
+	{
+		i = 1;
+		args = argv;
+	}
+	while (args[i])
 	{
 		j = 0;
-		args = argv[i];
-		if (ft_issign(args[j]) && args[j+1] != '\0')
+		value = ft_atoi_l(args[i]);
+		if (value < INT_MIN || value > INT_MAX)
+			return (0);
+		if (ft_issign(args[i][j]) && args[i][j +1] != '\0')
 			j++;
-		while (args[j] && ft_isdigit(args[j]))
+		while (args[i][j] && ft_isdigit(args[i][j]))
 			j++;
-		if (args[j] != '\0' && !ft_isdigit(args[j]))
+		if (args[i][j] != '\0' && !ft_isdigit(args[i][j]))
 			return (0);
 		i++;
 	}

@@ -2,8 +2,8 @@ NAME = push_swap
 HEADER = push_swap.h
 LIBFT = libft
 
-SRC = main.c check.c error.c populate.c push_swap.c \
-	push.c swap.c rotate.c rev_rotate.c stack.c radix.c \
+SRC = main.c check.c error.c push_swap.c push.c \
+	swap.c rotate.c rev_rotate.c stack.c radix.c \
 	sort_three.c sort_four.c sort_five.c
 
 OBJ = $(SRC:.c=.o)

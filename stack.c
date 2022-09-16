@@ -6,26 +6,40 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:33:54 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/09/12 15:28:19 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/15 23:12:33 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*get_last(t_stack *last)
+t_stack	*init_stack(int argc, char **argv)
 {
-	if (!last)
-		return (NULL);
-	while (last->next)
-		last = last->next;
-	return (last);
+	t_stack	*stack_a;
+	char	**args;
+	int		index;
+
+	index = 0;
+	stack_a = NULL;
+	if (argc == 2)
+		args = ft_split(argv[1], ' ');
+	else
+	{
+		index = 1;
+		args = argv;
+	}
+	while (args[index] != NULL)
+	{
+		add_back(&stack_a, new_element(ft_atoi(args[index])));
+		index++;
+	}
+	return (stack_a);
 }
 
 t_stack	*new_element(int nb)
 {
 	t_stack	*new;
 
-	new = (t_stack*)malloc(sizeof(t_stack));
+	new = malloc(sizeof * new);
 	if (!new)
 		return (NULL);
 	new->value = nb;
@@ -47,6 +61,15 @@ void	add_back(t_stack **stack, t_stack *new_element)
 	}
 	back = get_last(*stack);
 	back->next = new_element;
+}
+
+t_stack	*get_last(t_stack *last)
+{
+	if (!last)
+		return (NULL);
+	while (last->next)
+		last = last->next;
+	return (last);
 }
 
 int	get_stack_size(t_stack *stack)
