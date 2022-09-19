@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:33:54 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/09/15 23:12:33 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/16 11:21:18 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ t_stack	*init_stack(int argc, char **argv)
 		add_back(&stack_a, new_element(ft_atoi(args[index])));
 		index++;
 	}
+	if (argc == 2)
+		ft_free(args);
 	return (stack_a);
 }
 

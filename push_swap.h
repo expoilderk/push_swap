@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 22:27:59 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/09/15 23:12:19 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/19 09:40:48 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ typedef struct s_stack
 int		is_ordened(t_stack *stack);
 int		is_rev_ordened(t_stack *stack);
 int		is_duplicated(t_stack *stack_a);
-int		check_input(int argc, char **argv, int i, int j);
+int		check_input(int argc, char **argv);
 
 // Error Handler
 void	free_stack(t_stack **stack);
+void	ft_free(char **str);
 void	exit_error(t_stack **stack, char *msg, int fd);
 
 // Handler Arguments

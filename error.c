@@ -6,7 +6,7 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:28:23 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/09/15 23:08:21 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/16 11:27:13 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,16 @@ void	free_stack(t_stack **stack)
 		*stack = temp;
 	}
 	*stack = NULL;
+}
+
+void	ft_free(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	while (i >= 0)
+		free(str[i--]);
+	free(str);
 }

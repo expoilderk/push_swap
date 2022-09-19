@@ -6,17 +6,48 @@
 /*   By: mreis-me <mreis-me@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 11:52:03 by mreis-me          #+#    #+#             */
-/*   Updated: 2022/09/15 21:22:49 by mreis-me         ###   ########.fr       */
+/*   Updated: 2022/09/19 09:40:53 by mreis-me         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_input(int argc, char **argv, int i, int j)
+static int	get_check(int argc, char **args, int i, int j)
 {
 	long int	value;
-	char		**args;
+	int			check;
 
+	check = 0;
+	while (args[i])
+	{
+		j = 0;
+		value = ft_atoi_l(args[i]);
+		if (value < INT_MIN || value > INT_MAX)
+			check = 1;
+		if (ft_issign(args[i][j]) && args[i][j +1] != '\0')
+			j++;
+		while (args[i][j] && ft_isdigit(args[i][j]))
+			j++;
+		if (args[i][j] != '\0' && !ft_isdigit(args[i][j]))
+			check = 1;
+		i++;
+	}
+	if (argc == 2)
+		ft_free(args);
+	if (check == 1)
+		return (0);
+	return (1);
+}
+
+int	check_input(int argc, char **argv)
+{
+	char		**args;
+	int			check;
+	int			i;
+	int			j;
+
+	i = 0;
+	j = 0;
 	if (argc == 2)
 		args = ft_split(argv[1], ' ');
 	else
@@ -24,20 +55,9 @@ int	check_input(int argc, char **argv, int i, int j)
 		i = 1;
 		args = argv;
 	}
-	while (args[i])
-	{
-		j = 0;
-		value = ft_atoi_l(args[i]);
-		if (value < INT_MIN || value > INT_MAX)
-			return (0);
-		if (ft_issign(args[i][j]) && args[i][j +1] != '\0')
-			j++;
-		while (args[i][j] && ft_isdigit(args[i][j]))
-			j++;
-		if (args[i][j] != '\0' && !ft_isdigit(args[i][j]))
-			return (0);
-		i++;
-	}
+	check = get_check(argc, args, i, j);
+	if (check == 0)
+		return (0);
 	return (1);
 }
 
